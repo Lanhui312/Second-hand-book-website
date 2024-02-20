@@ -82,8 +82,8 @@ const navigation = {
       ],
       sections: [
         {
-          id: 'clothing',
-          name: 'Clothing',
+          id: 'something',
+          name: 'something',
           items: [
             { name: 'Tops', href: '#' },
             { name: 'Pants', href: '#' },
