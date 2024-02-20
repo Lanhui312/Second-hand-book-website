@@ -3,25 +3,23 @@ import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { HomeCarouselData } from './HomeCarouselData';
 
-const responsive = {
-    0: { items: 1 },
-    568: { items: 2 },
-    1024: { items: 3 },
-};
-
-const itemsLength = Array.from({ length: 5});
-
 const HomeCarousel = () =>{
     const items = HomeCarouselData.map((item)=><img className='cursor-pointer'
     role='presentation' src={item.image} alt=""/>)
 
+    const sizedItem = items.map((items) => {
+        const style = { width: 500};
+        return (<div className="item" style={style}>{items}</div>);
+    });
+
     return(
         <AliceCarousel
         mouseTracking
-        responsive={responsive}
+        autoWidth
+        autoHeight
         controlsStrategy="alternate"
         
-        items={items}/>)
+        items={sizedItem}/>)
 }
 
 export default HomeCarousel;
